@@ -1,0 +1,28 @@
+/* about story */
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* about section */
+.about-section {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 40px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.about-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #002b5c;
+}
+
+.about-text {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 18px;
+    color: #444;
+    text-align: justify;
+}
