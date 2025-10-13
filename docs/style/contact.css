@@ -1,0 +1,137 @@
+
+.contact-header {
+    background-image: url(../img/glasses-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+    position: relative;
+    
+}
+
+.contact-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(1, 31, 75, 0.85);
+}
+
+.contact-header .container-fluid {
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    margin-right: 30px;
+}
+
+/* Style for About Us h1 */
+.contact-header h1 {
+    color: #ffffff;
+    font-size: 2.50rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin: 0;
+    text-align: left;
+    flex: 0 0 auto;
+    margin-left: 30px;
+}
+
+/* contact form styles */
+:root {
+    --dark-blue: #0A192F;
+    --off-white: #EAEAEA;
+    --gold: #FFD700;
+}
+
+body {
+    background-color: var(--off-white);
+    color: var(--dark-blue);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+.section-heading, .lead {
+    color: var(--dark-blue) !important;
+}
+
+/* Featured Services Section Styling */
+.service-card {
+    background-color: white;
+    color: var(--dark-blue);
+    border-radius: 12px;
+    padding: 30px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    height: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.service-card h3 {
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 1.75rem;
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--dark-blue);
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+/* Contact Form Section Styling */
+.contact-card {
+    background-color: white;
+    border-radius: 20px;
+    border: 2px solid var(--gold);
+    transition: box-shadow 0.3s ease-in-out;
+    color: var(--dark-blue);
+}
+
+.contact-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-label {
+    color: var(--dark-blue);
+    font-weight: 600;
+}
+
+.form-control {
+    border-radius: 12px;
+    border: 1px solid var(--dark-blue);
+    background-color: var(--off-white);
+    color: var(--dark-blue);
+    transition: border-color 0.3s ease-in-out;
+}
+
+.form-control:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 0.25rem rgba(255, 215, 0, 0.25);
+}
+
+.btn-primary {
+    background-color: var(--dark-blue);
+    border-color: var(--dark-blue);
+    color: var(--off-white);
+    font-weight: 600;
+    border-radius: 12px;
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #050d18;
+    border-color: #050d18;
+}
+
+

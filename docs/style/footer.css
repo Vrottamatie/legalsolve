@@ -1,0 +1,65 @@
+
+
+/* footer styling */
+.site-footer {
+    letter-spacing: 1px;
+    background-color: #0d1b2a;
+    color: #f5f5dc; /* off white text color */
+}
+
+/* Footer main row layout */
+.site-footer .row:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* payfair display font for headings */
+.playfair-font {
+    font-family: 'Playfair Display', serif;
+}
+
+.site-footer .poppins-font {
+    line-height: 2.0;
+}
+
+.poppins-font {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* address and contact text color */
+.site-footer p {
+    color: #f5f5dc;
+}
+
+/* horizontal rule color */
+.footer-divider {
+    border-top: 1px solid #f5f5dc;
+    opacity: 0.5;
+    margin-top: -110px;
+    margin-bottom: -20px;
+}
+
+/* logo styling */
+.footer-logo {
+    margin-top: -45px;
+    display: block;
+    width: 400px;
+    height: auto;
+    filter: invert(80%) sepia(100%) saturate(200%) hue-rotate(-20deg) brightness(120%) contrast(120%); /* color to gold */
+}
+
+/* Copyright row */
+.site-footer .row:last-child {
+    margin-top: 1.5rem;
+}
+.site-footer .row:last-child .col-12 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.site-footer .row:last-child p {
+    text-align: center;
+    width: 100%;
+}

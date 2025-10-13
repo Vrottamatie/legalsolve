@@ -1,0 +1,545 @@
+/* ======================================= */
+/* MEDIA QUERIES FOR RESPONSIVENESS */
+/* ======================================= */
+
+/* ------------------------------------------------------------- */
+/* Tablet/Small Desktop Adjustments (Max Width: 992px) */
+/* ------------------------------------------------------------- */
+@media (max-width: 992px) {
+
+    /* NAVIGATION BAR */
+    /* On smaller screens, Bootstrap handles the collapse, 
+       but we ensure the toggler is visible. */
+    .navbar-toggler {
+        display: block; /* Make the hamburger icon visible */
+    }
+
+    /* Reset desktop-specific display for the nav links list */
+    .navbar-nav {
+        /* Bootstrap should handle the flex direction change for the list when collapsed */
+        display: block; /* Default block display for stacked menu items */
+        text-align: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    /* Adjust padding for individual nav links */
+    .navbar-nav .nav-item {
+        margin: 5px 0;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 5px 0;
+        font-size: 1.1rem; /* Slightly smaller text for better fit */
+    }
+}
+
+/* ------------------------------------------------------------- */
+/* Mobile Adjustments (Max Width: 768px) */
+/* ------------------------------------------------------------- */
+@media (max-width: 768px) {
+
+    /* NAVIGATION BAR */
+    .navbar-brand span {
+        font-size: 2rem; /* Reduce logo size on small screens */
+    }
+
+    /* HERO SECTION */
+    .hero-section {
+        height: auto; /* Allow height to adjust based on content */
+        min-height: 85vh; /* Ensure it still takes up significant screen space */
+        padding: 60px 20px; /* Add internal padding */
+    }
+
+    .hero-content {
+        padding: 0 10px;
+    }
+
+    .hero-headline {
+        font-size: 1.8rem !important; /* Significantly reduce headline size */
+    }
+
+    .hero-subheadline {
+        font-size: 1rem !important; /* Smaller body text */
+    }
+
+    .hero-cta {
+        font-size: 1rem; /* Smaller button text */
+        padding: 10px 20px;
+    }
+
+    /* MAP SECTION */
+    /* The HTML for the map uses 100vw, which is good. 
+       We only need to ensure the height is not excessive on mobile. */
+    iframe {
+        height: 300px !important; /* Smaller map height */
+    }
+
+    /* FOOTER */
+    .site-footer {
+        padding-top: 30px !important; /* Add top padding to the footer */
+    }
+
+    /* Center-align all footer content on mobile */
+    .site-footer .col-md-4 {
+        text-align: center !important;
+        margin-bottom: 20px; /* Add space between stacked columns */
+    }
+
+    /* Adjust logo and vertical position for stacking */
+    .footer-logo {
+        width: 250px; /* Smaller logo */
+        margin-top: 0; /* Reset negative margin for center alignment */
+    }
+
+    /* Adjust vertical space around the divider */
+    .footer-divider {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+}
+
+/* --- CRITICAL ICON FIX --- */
+
+/* 1. Ensure the button itself is transparent (get rid of red box) and has no border */
+.navbar-toggler {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0; 
+}
+
+/* 2. Force the Icon to be white and visible */
+.navbar-toggler-icon {
+    /* Use !important to override any conflicting styles */
+    display: inline-block !important; 
+    width: 30px !important;
+    height: 30px !important;
+
+    /* Reliable white SVG for dark backgrounds */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: 100% !important;
+    
+    /* Ensure no text/color from a conflicting style hides it */
+    filter: none !important; 
+}
+
+/* about page */
+
+/* ======================================= */
+/* Mobile Responsiveness for Header/Footer */
+/* ======================================= */
+
+/* --- Mobile Devices (e.g., up to 767px) --- */
+@media (max-width: 767.98px) {
+
+    /* HEADER STYLES */
+    /* ------------------------------------- */
+
+    /* The container already has d-flex and justify-content-between, 
+       which keeps H1 and the toggler aligned horizontally. */
+    .about-header .container-fluid {
+        /* Remove large margins that might push elements off-screen */
+        margin-right: 0 !important; 
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        /* Re-ensure horizontal alignment on mobile */
+        flex-direction: row; 
+    }
+    
+    /* Adjust the header height for a smaller display */
+    .about-header {
+        height: 200px; /* Reduced height for mobile screens */
+    }
+
+    /* Adjust H1 styling for mobile */
+    .about-header h1 {
+        font-size: 1.75rem; /* Smaller font size */
+        margin-left: 0 !important; /* Remove large margin */
+        flex-grow: 1; /* Allow H1 to take available space */
+    }
+
+    /* Style the Toggler (Hamburger Icon) */
+    .navbar-toggler {
+        /* Ensure the toggler uses the correct color icon (white is usually needed on dark backgrounds) */
+        border-color: rgba(255, 255, 255, 0.5);
+        padding: 0.25rem 0.5rem;
+    }
+    .navbar-toggler-icon {
+        /* This CSS ensures a white icon for a dark header background */
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    /* When the menu is open (collapsed), force links to stack vertically and center them */
+    .about-header .navbar-collapse.collapse.show {
+        /* This ensures the open menu takes up the necessary space */
+        width: 100%;
+    }
+
+    .about-header .navbar-nav {
+        flex-direction: column !important; /* Stack links vertically */
+        text-align: center;
+        width: 100%;
+        margin-top: 10px; /* Space between H1/Toggler and the opened menu */
+    }
+}
+
+/* ================================================= */
+/* Mobile Dropdown Menu with Overlay Background Effect */
+/* ================================================= */
+@media (max-width: 767.98px) {
+    /* 1. Style the container for the opened menu */
+    .about-header .navbar-collapse.show {
+        /* Set position relative to the header */
+        position: absolute;
+        top: 100%; /* Start right below the H1/Toggler line */
+        left: 0;
+        width: 100%;
+        
+        /* The Overlay: Use a dark color (matching the header blue) */
+        background-color: rgba(1, 31, 75, 0.95); 
+        
+        /* Ensure it covers page content but stays under the header line */
+        z-index: 10; 
+        
+        /* Add some padding for visual spacing */
+        padding: 20px 0;
+        
+        /* Set the height to extend down the screen */
+        min-height: calc(100vh - 200px); /* 100% viewport height minus the header height (200px) */
+    }
+
+    /* 2. Center and style the links within the overlay */
+    .about-header .navbar-nav {
+        flex-direction: column !important; /* Stack links vertically */
+        text-align: center;
+        width: 100%;
+        margin-top: 0; /* Reset margin */
+    }
+    
+    .about-header .nav-item {
+        margin: 10px 0; /* Add vertical spacing between links */
+    }
+
+    /* Make sure the links are prominent and white */
+    .about-header .nav-link {
+        color: #ffffff !important; 
+        font-size: 1.1rem;
+        padding: 10px 0;
+        display: block; /* Ensure the link takes the full width for easier tapping */
+    }
+
+    /* 3. Ensure the main header container remains aligned horizontally */
+    .about-header .container-fluid {
+        flex-direction: row; 
+    }
+}
+
+/* ================================================= */
+/* Desktop View Fixes (Min-width 768px and up)       */
+/* Ensures standard desktop navigation is displayed  */
+/* ================================================= */
+@media (min-width: 768px) {
+    
+    /* 1. Hide the Hamburger Toggler on desktop */
+    .navbar-toggler {
+        display: none !important;
+    }
+
+    /* 2. Force the links container to display on desktop */
+    .navbar-collapse {
+        /* Bootstrap normally handles this, but forcing it here ensures it */
+        display: flex !important;
+        
+        /* Ensures the links align to the right side of the container */
+        justify-content: flex-end; 
+    }
+    
+    /* 3. Ensure links are horizontal on desktop */
+    .navbar-nav {
+        flex-direction: row !important;
+    }
+    
+    /* Optional: Reset the header container margins set for mobile */
+    .about-header .container-fluid {
+        margin-right: 30px !important; /* Re-apply your original desktop margin */
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        flex-direction: row !important; /* Ensure horizontal alignment */
+    }
+}
+
+/* services page */
+
+/* ===================================== */
+/* 📱 Mobile Responsiveness (Media Queries) */
+/* ===================================== */
+
+/* Small devices (tablets, 768px and up) - General Mobile Adjustments */
+@media (max-width: 991.98px) {
+    /* Header Adjustments */
+    .services-header  {
+        height: 200px; /* Shorter header on mobile */
+    }
+
+    .services-header  h1 {
+        font-size: 2rem;
+        margin-left: 10px; /* Reduced margin */
+    }
+    
+    .services-header .container-fluid {
+        padding: 0 15px !important;
+    }
+
+    /* Navbar on mobile - when toggled open */
+    .services-header  #navbarNav.collapse:not(.show) {
+        display: none !important; /* Bootstrap handles this, but for clarity */
+    }
+
+    .services-header #navbarNav.show {
+        background-color: rgba(1, 31, 75, 0.95); /* Dark background for dropdown */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .services-header .navbar-nav {
+        flex-direction: column !important; /* Stack links vertically */
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 5px 0;
+        width: 100%;
+    }
+
+    .navbar-nav .nav-link {
+        color: white; /* Ensure visibility */
+        text-align: left;
+        width: 100%;
+    }
+
+    /* Featured Services */
+    .service-card {
+        padding: 20px; /* Reduced padding */
+    }
+
+    .service-card h3 {
+        font-size: 1.4rem;
+    }
+}
+
+/* Extra small devices (phones, 576px and down) */
+@media (max-width: 575.98px) {
+    /* Header Adjustments */
+    .services-header {
+        height: 180px;
+    }
+
+    .services-header h1 {
+        font-size: 1.8rem;
+    }
+
+    /* Service Section Title */
+    .section-heading {
+        font-size: 2rem !important; /* For the h2 with display-4 */
+    }
+    
+    .lead {
+        font-size: 1rem;
+    }
+}
+
+/* contact page */
+/* =======================================
+   Mobile Responsiveness (media.css content)
+   ======================================= */
+
+/* General adjustments for tablets and smaller desktops (<= 992px) */
+@media (max-width: 992px) {
+    /* Adjust header height and text size */
+    .contact-header {
+        height: 250px; /* Slightly reduce header height */
+    }
+
+    .contact-header h1 {
+        font-size: 2.0rem; /* Smaller heading on tablet/landscape mobile */
+        margin-left: 20px; /* Reduce left margin */
+    }
+
+    /* Navbar adjustment: center navigation links when collapsed */
+    .contact-header .container-fluid {
+        margin-right: 0; /* Remove right margin from container */
+    }
+
+    .contact-header .navbar-toggler {
+        /* Ensure toggler is visible and positioned correctly */
+        display: block;
+        margin-right: 20px;
+        z-index: 3;
+    }
+
+    /* Adjust navbar links for better stacking/visibility in collapse state */
+    #navbarNav.collapse:not(.show) .navbar-nav {
+        flex-direction: column !important; /* Stack links vertically */
+        align-items: center;
+        width: 100%;
+        padding-top: 15px;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 5px 0;
+    }
+
+    /* Adjust section spacing */
+    main.py-5 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    /* Adjust heading sizes */
+    .section-heading.display-4 {
+        font-size: 2.5rem !important;
+    }
+}
+
+/* Specific adjustments for smaller tablets and mobile phones (<= 768px) */
+@media (max-width: 768px) {
+    .contact-header {
+        height: 200px; /* Further reduce header height for mobile */
+    }
+
+    .contact-header h1 {
+        font-size: 1.75rem; /* Standard mobile heading size */
+        margin-left: 15px;
+    }
+
+    /* Contact form card padding */
+    .contact-card {
+        padding: 1.5rem !important;
+    }
+}
+
+/* Extra small devices (less than 576px) */
+@media (max-width: 576px) {
+    /* Further spacing adjustments */
+    .contact-header .container-fluid {
+        padding: 10px !important;
+    }
+
+    .contact-header h1 {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+
+    .section-heading.display-4 {
+        font-size: 2rem !important; /* Make main headings smaller */
+    }
+
+    .lead {
+        font-size: 1rem;
+    }
+
+    /* Ensure form controls and buttons are full width and look good */
+    .form-control, .btn-primary {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* ================================================= */
+/* Mobile Dropdown Menu with Overlay Background Effect */
+/* ================================================= */
+@media (max-width: 767.98px) {
+    /* 1. Style the container for the opened menu */
+    .contact-header .navbar-collapse.show {
+        /* Set position relative to the header */
+        position: absolute;
+        top: 100%; /* Start right below the H1/Toggler line */
+        left: 0;
+        width: 100%;
+        
+        /* The Overlay: Use a dark color (matching the header blue) */
+        background-color: rgba(1, 31, 75, 0.95); 
+        
+        /* Ensure it covers page content but stays under the header line */
+        z-index: 10; 
+        
+        /* Add some padding for visual spacing */
+        padding: 20px 0;
+        
+        /* Set the height to extend down the screen */
+        min-height: calc(100vh - 200px); /* 100% viewport height minus the header height (200px) */
+    }
+
+   
+    
+    .contact-header .nav-item {
+        margin: 10px 0; /* Add vertical spacing between links */
+    }
+
+    /* Make sure the links are prominent and white */
+    .contact-header .nav-link {
+        color: #ffffff !important; 
+        font-size: 1.1rem;
+        padding: 10px 0;
+        display: block; /* Ensure the link takes the full width for easier tapping */
+    }
+
+    /* 3. Ensure the main header container remains aligned horizontally */
+    .contact-header .container-fluid {
+        flex-direction: row; 
+    }
+    /* When the menu is open (collapsed), force links to stack vertically and center them */
+    .contact-header .navbar-collapse.collapse.show {
+        /* This ensures the open menu takes up the necessary space */
+        width: 100%;
+    }
+
+    
+}
+
+@media (max-width: 767.98px) {
+    /* 1. Style the container for the opened menu */
+    .contact-header .navbar-collapse.show {
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        width: 100%;
+        background-color: rgba(1, 31, 75, 0.95); 
+        z-index: 10; 
+        padding: 20px 0;
+        min-height: calc(100vh - 200px); 
+    }
+
+    /* 2. Center and style the links within the overlay */
+    .contact-header .navbar-nav {
+        flex-direction: column !important; /* Stack links vertically */
+        text-align: center;
+        width: 100%;
+        margin-top: 0; /* Reset margin */
+    }
+    
+    .contact-header .nav-item {
+        margin: 10px 0; /* Add vertical spacing between links */
+    }
+
+    .contact-header .nav-link {
+        color: #ffffff !important; 
+        font-size: 1.1rem;
+        padding: 10px 0;
+        display: block; 
+    }
+
+    /* 3. Ensure the main header container remains aligned horizontally */
+    .contact-header .container-fluid {
+        flex-direction: row; 
+    }
+}
+
