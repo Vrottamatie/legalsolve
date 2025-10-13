@@ -1,0 +1,133 @@
+/* ===================================== */
+/* Base Styles (Desktop First / General) */
+/* ===================================== */
+
+:root {
+    --dark-blue: #011F4B; /* Adjusted to a deep blue for professional feel, close to 0A192F but maybe a bit richer for readability */
+    --off-white: #EAEAEA;
+    --gold: #FFD700;
+    --playfair: 'Playfair Display', serif;
+    --poppins: 'Poppins', sans-serif;
+}
+
+/* General Body and Typography */
+body {
+    background-color: var(--off-white);
+    color: var(--dark-blue);
+    font-family: var(--poppins);
+    line-height: 1.6;
+}
+
+.section-heading, .lead, .header-logo {
+    color: var(--dark-blue) !important;
+}
+
+/* Navbar Links (assuming a file like nav.css) */
+.navbar-nav .nav-link {
+    color: var(--off-white); /* Assuming navbar links in the header should be white */
+    font-family: var(--poppins);
+    padding: 0.5rem 1rem;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--gold);
+}
+
+/* ===================================== */
+/* Header Section (.services-header) */
+/* ===================================== */
+
+.services-header {
+    background-image: url(../img/books-bg.jpg); /* Ensure this path is correct */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+    position: relative;
+}
+
+.services-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(1, 31, 75, 0.85); /* Dark overlay */
+}
+
+/* Container to align H1 and Navbar */
+.services-header .container-fluid {
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    padding: 0 30px !important; /* Overriding p-4 for more controlled spacing */
+}
+
+.services-header h1 {
+    color: #ffffff;
+    font-size: 2.8rem; /* Slightly larger for desktop */
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-family: var(--playfair);
+    text-align: left;
+    margin: 0;
+}
+
+/* Navbar Customizations - Desktop */
+/* This style keeps the navbar links aligned right on desktop */
+.services-header #navbarNav {
+    display: flex !important; /* Overriding Bootstrap's default for 'collapse' */
+    justify-content: flex-end;
+}
+
+.services-header .navbar-toggler {
+    border: 1px solid white;
+}
+
+.services-header .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* ===================================== */
+/* Service Cards Section */
+/* ===================================== */
+
+.service-card {
+    background-color: white;
+    color: var(--dark-blue);
+    border-radius: 12px;
+    padding: 30px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    height: 100%;
+    text-align: center; /* Center content within the card */
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.service-card h3 {
+    color: var(--dark-blue); /* Changed from gold for better contrast on white background */
+    font-weight: 700;
+    font-size: 1.5rem; /* Adjusted for better card fit */
+    font-family: var(--playfair);
+}
+
+.service-card p {
+    font-size: 1rem;
+}
+
+.service-icon {
+    font-size: 3rem; /* Slightly larger icon */
+    margin-bottom: 1rem;
+    color: var(--gold); /* Highlight icon in gold */
+}
+
+.section-heading {
+    font-family: var(--playfair);
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
